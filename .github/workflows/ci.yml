@@ -1,19 +1,33 @@
 name: CI
 
-on: [push]
+on:
+  push:
+    path:
+      - '*'
+      - '!/benchmarks/*'
+      - '!/tools/*'
+  pull_request:
+    path:
+      - '*'
+      - '!/benchmarks/*'
+      - '!/tools/*'
 
 jobs:
   build:
+    runs-on: ${{ matrix.os }}
 
-    runs-on: ubuntu-latest
-    
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macOS-latest, windows-latest]
+        build_type: [Debug, Release]
+
     steps:
     - uses: actions/checkout@v1
     - name: Configure
-      run: cmake -H. -Bbuild -G"Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug
+      run: cmake -H. -Bbuild -G"Unix Makefiles" -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
     - name: Build
-      run: cmake --build build --config Debug -- -j4
+      run: cmake --build build --config ${{ matrix.build_type }} -- -j4
     - name: Run tests
       run: |
         cd build
-        ctest -C Debug --output-on-failure
+        ctest -C ${{ matrix.build_type }} --output-on-failure

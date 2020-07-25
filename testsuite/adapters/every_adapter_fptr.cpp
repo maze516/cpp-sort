@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2018 Morwenn
+ * Copyright (c) 2018-2020 Morwenn
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -27,7 +27,7 @@
 #include <iterator>
 #include <list>
 #include <vector>
-#include <catch2/catch.hpp>
+#include <catch2/catch_test_macros.hpp>
 #include <cpp-sort/adapters.h>
 #include <cpp-sort/fixed_sorters.h>
 #include <cpp-sort/sorters/merge_sorter.h>
@@ -128,7 +128,7 @@ TEST_CASE( "function pointer test for every adapter",
         CHECK( std::is_sorted(std::begin(collection), std::end(collection), std::greater<>{}) );
     }
 
-    SECTION( "schwartz_adapter<small_array_adapter>" )
+    SECTION( "schwartz_adapter<small_array_adapter" )
     {
         using sorter = cppsort::schwartz_adapter<
             cppsort::small_array_adapter<cppsort::low_comparisons_sorter>
@@ -155,7 +155,7 @@ TEST_CASE( "function pointer test for every adapter",
         CHECK( std::is_sorted(std::begin(li), std::end(li), std::greater<>{}) );
     }
 
-    SECTION( "stable_adapter<self_sort_adapter>" )
+    SECTION( "stable_adapter<self_sort_adapter" )
     {
         using sorter = cppsort::stable_adapter<
             cppsort::self_sort_adapter<cppsort::poplar_sorter>

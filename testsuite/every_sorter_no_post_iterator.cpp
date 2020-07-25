@@ -25,9 +25,10 @@
 #include <iterator>
 #include <random>
 #include <vector>
-#include <catch2/catch.hpp>
+#include <catch2/catch_template_test_macros.hpp>
 #include <cpp-sort/sorters.h>
 #include <cpp-sort/utility/buffer.h>
+#include "catch_rng_seed.h"
 #include "no_post_iterator.h"
 
 TEMPLATE_TEST_CASE( "test most sorters with no_post_iterator", "[sorters]",

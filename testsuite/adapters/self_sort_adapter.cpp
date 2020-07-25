@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2015-2018 Morwenn
+ * Copyright (c) 2015-2020 Morwenn
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 #include <type_traits>
-#include <catch2/catch.hpp>
+#include <catch2/catch_test_macros.hpp>
 #include <cpp-sort/adapters/hybrid_adapter.h>
 #include <cpp-sort/adapters/self_sort_adapter.h>
 #include <cpp-sort/adapters/stable_adapter.h>
@@ -226,7 +226,7 @@ TEST_CASE( "stability of self_sort_adapter",
     }
 }
 
-TEST_CASE( "stability of stable_adapter<self_sort_adapter>",
+TEST_CASE( "stability of stable_adapter<self_sort_adapter",
            "[self_sort_adapter][stable_adapter][is_stable]" )
 {
     using adapted_unstable_sorter = cppsort::stable_adapter<
@@ -259,7 +259,7 @@ TEST_CASE( "stability of stable_adapter<self_sort_adapter>",
     }
 }
 
-TEST_CASE( "stable_adapter<hybrid_adapter<self_sort_adapter>>",
+TEST_CASE( "stable_adapter<hybrid_adapter<self_sort_adapter>",
            "[self_sort_adapter][stable_adapter][hybrid_adapter]" )
 {
     using sorter = cppsort::stable_adapter<

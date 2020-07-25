@@ -26,9 +26,10 @@
 #include <iterator>
 #include <random>
 #include <vector>
-#include <catch2/catch.hpp>
+#include <catch2/catch_test_macros.hpp>
 #include <cpp-sort/sorters/merge_insertion_sorter.h>
 #include "../algorithm.h"
+#include "../catch_rng_seed.h"
 
 TEST_CASE( "merge_insertion_sorter tests with projections",
            "[merge_insertion_sorter][projection]" )

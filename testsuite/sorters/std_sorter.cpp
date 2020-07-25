@@ -27,9 +27,10 @@
 #include <numeric>
 #include <random>
 #include <vector>
-#include <catch2/catch.hpp>
+#include <catch2/catch_test_macros.hpp>
 #include <cpp-sort/sorters/std_sorter.h>
 #include "../algorithm.h"
+#include "../catch_rng_seed.h"
 
 TEST_CASE( "std_sorter tests", "[std_sorter]" )
 {

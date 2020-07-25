@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2015-2018 Morwenn
+ * Copyright (c) 2020 Morwenn
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,5 +21,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-#define CATCH_CONFIG_MAIN
-#include <catch2/catch.hpp>
+#ifndef CPPSORT_TESTSUITE_CATCH_RNG_SEED_H_
+#define CPPSORT_TESTSUITE_CATCH_RNG_SEED_H_
+
+namespace Catch
+{
+    // This functions is only available in an internal header that
+    // drags a lot of dependencies, it's cheaper to just declare
+    // it ourselves in this wrapper
+    unsigned int rngSeed();
+}
+
+#endif // CPPSORT_TESTSUITE_CATCH_RNG_SEED_H_

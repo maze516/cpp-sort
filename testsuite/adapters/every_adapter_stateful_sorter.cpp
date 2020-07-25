@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2019 Morwenn
+ * Copyright (c) 2019-2020 Morwenn
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,7 @@
 #include <type_traits>
 #include <utility>
 #include <vector>
-#include <catch2/catch.hpp>
+#include <catch2/catch_test_macros.hpp>
 #include <cpp-sort/adapters.h>
 #include <cpp-sort/fixed_sorters.h>
 #include <cpp-sort/sorters/quick_merge_sorter.h>
@@ -186,7 +186,7 @@ TEST_CASE( "test stateful sorters with every adapter",
         CHECK( std::is_sorted(std::begin(li), std::end(li), std::greater<>{}) );
     }
 
-    SECTION( "stable_adapter<self_sort_adapter>" )
+    SECTION( "stable_adapter<self_sort_adapter" )
     {
         stateful_sorter<> sorter(42);
         auto sort_it = cppsort::stable_adapter<

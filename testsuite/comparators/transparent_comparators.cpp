@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2019 Morwenn
+ * Copyright (c) 2019-2020 Morwenn
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -26,7 +26,7 @@
 #include <set>
 #include <string>
 #include <vector>
-#include <catch2/catch.hpp>
+#include <catch2/catch_test_macros.hpp>
 #include <cpp-sort/comparators/case_insensitive_less.h>
 #include <cpp-sort/comparators/natural_less.h>
 #include <cpp-sort/comparators/total_less.h>

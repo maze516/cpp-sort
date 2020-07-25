@@ -24,7 +24,7 @@
 #include <functional>
 #include <list>
 #include <type_traits>
-#include <catch2/catch.hpp>
+#include <catch2/catch_test_macros.hpp>
 #include <cpp-sort/adapters/container_aware_adapter.h>
 #include <cpp-sort/sorters/merge_sorter.h>
 #include "../algorithm.h"

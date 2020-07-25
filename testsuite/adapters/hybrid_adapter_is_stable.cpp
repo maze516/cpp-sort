@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2016-2018 Morwenn
+ * Copyright (c) 2016-2020 Morwenn
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -27,6 +27,7 @@
 #include <list>
 #include <utility>
 #include <vector>
+#include <catch2/catch_test_macros.hpp>
 #include <cpp-sort/adapters/hybrid_adapter.h>
 #include <cpp-sort/adapters/small_array_adapter.h>
 #include <cpp-sort/fixed/sorting_network_sorter.h>
@@ -34,7 +35,6 @@
 #include <cpp-sort/sorters/merge_sorter.h>
 #include <cpp-sort/sorters/pdq_sorter.h>
 #include <cpp-sort/sorters/selection_sorter.h>
-#include <catch2/catch.hpp>
 
 TEST_CASE( "hybrid_adapter stability checks",
            "[hybrid_adapter][is_stable]" )

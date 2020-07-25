@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2015-2019 Morwenn
+ * Copyright (c) 2015-2020 Morwenn
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -32,8 +32,8 @@
 #include <iterator>
 #include <random>
 #include <vector>
-#include <catch2/catch.hpp>
 #include <cpp-sort/detail/bitops.h>
+#include "catch_rng_seed.h"
 
 namespace dist
 {

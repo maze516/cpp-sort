@@ -25,11 +25,12 @@
 #include <functional>
 #include <iterator>
 #include <vector>
-#include <catch2/catch.hpp>
+#include <catch2/catch_test_macros.hpp>
 #include <cpp-sort/sorters/spin_sorter.h>
 #include <cpp-sort/utility/functional.h>
 #include "../algorithm.h"
 #include "../distributions.h"
+#include "../catch_rng_seed.h"
 
 namespace
 {

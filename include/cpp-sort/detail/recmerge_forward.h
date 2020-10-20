@@ -36,7 +36,6 @@
 #include "memory.h"
 #include "move.h"
 #include "rotate.h"
-#include "type_traits.h"
 #include "upper_bound.h"
 
 namespace cppsort
@@ -101,7 +100,7 @@ namespace detail
                   std::forward_iterator_tag tag)
         -> void
     {
-        using rvalue_reference = remove_cvref_t<rvalue_reference_t<ForwardIterator>>;
+        using rvalue_reference = std::remove_cvref_t<rvalue_reference_t<ForwardIterator>>;
         using difference_type = difference_type_t<ForwardIterator>;
 
         if (n0 == 0 || n1 == 0) return;

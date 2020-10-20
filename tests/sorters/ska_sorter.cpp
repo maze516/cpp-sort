@@ -94,11 +94,11 @@ TEST_CASE( "ska_sorter tests", "[ska_sorter]" )
         std::vector<std::string_view> vec(std::begin(string_vec), std::end(string_vec));
 
         std::shuffle(std::begin(vec), std::end(vec), engine);
-        cppsort::sort(cppsort::ska_sort, vec);
+        cppsort::ska_sort(vec);
         CHECK( std::is_sorted(std::begin(vec), std::end(vec)) );
 
         std::shuffle(std::begin(vec), std::end(vec), engine);
-        cppsort::sort(cppsort::ska_sort, std::begin(vec), std::end(vec));
+        cppsort::ska_sort(std::begin(vec), std::end(vec));
         CHECK( std::is_sorted(std::begin(vec), std::end(vec)) );
     }
 }

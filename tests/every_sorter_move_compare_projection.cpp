@@ -22,7 +22,8 @@ TEMPLATE_TEST_CASE( "every sorter with comparison function altered by move", "[s
                     cppsort::grail_sorter<
                         cppsort::utility::dynamic_buffer<cppsort::utility::sqrt>
                     >,
-                    cppsort::heap_sorter,
+                    cppsort::heap_sorter<>,
+                    cppsort::heap_sorter<5>,
                     cppsort::insertion_sorter,
                     cppsort::merge_insertion_sorter,
                     cppsort::merge_sorter,
@@ -58,7 +59,8 @@ TEMPLATE_TEST_CASE( "every sorter with projection function altered by move", "[s
                     cppsort::grail_sorter<
                         cppsort::utility::dynamic_buffer<cppsort::utility::sqrt>
                     >,
-                    cppsort::heap_sorter,
+                    cppsort::heap_sorter<>,
+                    cppsort::heap_sorter<5>,
                     cppsort::insertion_sorter,
                     cppsort::merge_insertion_sorter,
                     cppsort::merge_sorter,

@@ -16,12 +16,6 @@
 Some improvements suggested by:
 Phil Endecott and Frank Gennari
 */
-<<<<<<< HEAD
-
-// Modified in 2015-2020 by Morwenn for inclusion into cpp-sort
-
-=======
->>>>>>> master
 #ifndef CPPSORT_DETAIL_SPREADSORT_DETAIL_STRING_SORT_H_
 #define CPPSORT_DETAIL_SPREADSORT_DETAIL_STRING_SORT_H_
 

@@ -85,18 +85,8 @@ namespace detail
             ++d;
         }
 
-#ifndef __cpp_lib_uncaught_exceptions
-        // Sort the iterators on pointed values
-        std::forward<Sorter>(sorter)(
-            sort_array, sort_array + size, std::move(compare),
-            [&proj](auto& elem) -> decltype(auto) {
-                return proj(*(elem.original_location));
-            }
-        );
-#else
         // Work around the sorters that return void
-        auto exit_function = make_scope_success([&] {
-#endif
+        auto exit_function = scope_success([&] {
 
             // Sort the actual elements via the tuple array:
             index = 0;
@@ -118,7 +108,6 @@ namespace detail
                 }
             }
 
-#ifdef __cpp_lib_uncaught_exceptions
         });
 
         if (size < 2) {
@@ -132,7 +121,6 @@ namespace detail
                 return proj(*(elem.original_location));
             }
         );
-#endif
     }
 }}
 

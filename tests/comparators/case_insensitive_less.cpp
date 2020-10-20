@@ -102,14 +102,14 @@ TEST_CASE( "case-insensitive string_view comparison with case_insensitive_less" 
 
     SECTION( "implicit global locale" )
     {
-        cppsort::sort(array, cppsort::case_insensitive_less);
+        cppsort::heap_sort(array, cppsort::case_insensitive_less);
         CHECK( array == expected );
     }
 
     SECTION( "explicit global locale" )
     {
         std::locale locale;
-        cppsort::sort(array, cppsort::case_insensitive_less(locale));
+        cppsort::heap_sort(array, cppsort::case_insensitive_less(locale));
         CHECK( array == expected );
     }
 }

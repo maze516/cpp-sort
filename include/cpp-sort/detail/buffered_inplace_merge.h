@@ -19,6 +19,7 @@
 ////////////////////////////////////////////////////////////
 #include <iterator>
 #include <memory>
+#include <type_traits>
 #include <utility>
 #include <cpp-sort/utility/as_function.h>
 #include <cpp-sort/utility/iter_move.h>
@@ -26,7 +27,6 @@
 #include "iterator_traits.h"
 #include "memory.h"
 #include "move.h"
-#include "type_traits.h"
 
 namespace cppsort
 {
@@ -141,7 +141,7 @@ namespace detail
         -> void
     {
         using utility::iter_move;
-        using rvalue_reference = remove_cvref_t<rvalue_reference_t<BidirectionalIterator>>;
+        using rvalue_reference = std::remove_cvref_t<rvalue_reference_t<BidirectionalIterator>>;
         destruct_n<rvalue_reference> d(0);
         std::unique_ptr<rvalue_reference, destruct_n<rvalue_reference>&> h2(buff, d);
         if (len1 <= len2) {

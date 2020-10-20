@@ -100,7 +100,7 @@ TEST_CASE( "ska_sorter tests with projections",
         std::vector<wrapper> vec(std::begin(string_vec), std::end(string_vec));
 
         std::shuffle(std::begin(vec), std::end(vec), engine);
-        cppsort::sort(cppsort::ska_sort, vec, &wrapper::value);
+        cppsort::ska_sort(vec, &wrapper::value);
         CHECK( helpers::is_sorted(std::begin(vec), std::end(vec),
                                   std::less<>{}, &wrapper::value) );
     }

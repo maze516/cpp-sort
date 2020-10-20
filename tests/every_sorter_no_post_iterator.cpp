@@ -104,6 +104,6 @@ TEMPLATE_TEST_CASE( "test type-specific sorters with no_post_iterator further",
     // Iterators with no post-increment and no post-decrement
     auto first_strv = make_no_post_iterator(std::begin(collection_strv));
     auto last_strv = make_no_post_iterator(std::end(collection_strv));
-    cppsort::sort(cppsort::ska_sorter{}, first_strv, last_strv);
+    cppsort::ska_sort(first_strv, last_strv);
     CHECK( std::is_sorted(std::begin(collection_strv), std::end(collection_strv)) );
 }

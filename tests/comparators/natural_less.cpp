@@ -45,7 +45,7 @@ TEST_CASE( "string_view natural sort with natural_less" )
         "Yay 45",
         "Yay 1234"
     };
-    cppsort::sort(array, cppsort::natural_less);
+    cppsort::heap_sort(array, cppsort::natural_less);
 
     std::array<std::string_view, 7> expected = {
         "Yay",
